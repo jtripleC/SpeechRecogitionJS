@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preloader</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+        }
+        .container{
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+        .load{
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
+            animation: animate 2s linear infinite;
+        }
+        .load:before{
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            background: #000;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+        .load:after{
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            background: #000;
+            border-radius: 50%;
+            z-index: 1000;
+            background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
+            z-index: 1;
+            filter: blur(30px);
+        }
+        @keyframes animate{
+            0%{
+                transform: rotate(0deg);
+                filter: hue-rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .oleado{
+            position: relative;
+        
+            -webkit-box-reflect: below -45px linear-gradient(transparent, rgba(0,0,0,0.2));
+        }
+        .oleado span{
+            position: relative;
+            display: inline-block;
+            color: #fff;
+           
+            font-size: 1em;
+            animation: animation 1s ease-in-out infinite;
+            animation-delay: calc(0.1s * var(--i));
+            
+        }
+
+        .oleado{
+            margin-top: 30px;
+            padding: 20px;
+        }
+        @keyframes animation{
+            0%{
+                transform: translateY(0px);
+            }
+            20%{
+                transform: translateY(-20px);
+            }
+            40%, 100%{
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="load"></div>
+    <br>
+    <div>
+        <div class="oleado">
+            <span style="--i:1;">L</span>
+            <span style="--i:2;">O</span>
+            <span style="--i:3;">A</span>
+            <span style="--i:4;">D</span>
+            <span style="--i:5;">I</span>
+            <span style="--i:6;">N</span>
+            <span style="--i:7;">G</span>
+            <span style="--i:8;">.</span>
+            <span style="--i:9;">.</span>
+            <span style="--i:10;">.</span>
+        </div>
+    </div>
+
+   
+</div>
+    
+</body>
+</html>

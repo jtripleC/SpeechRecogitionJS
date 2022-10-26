@@ -1,0 +1,404 @@
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+html{
+    font-family: 'Otomanopee One', sans-serif;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+section{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    
+    flex-direction: column;
+    padding: 50px 0;
+}
+section h1{
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
+    margin-bottom: 40px;
+
+}
+.container{
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    justify-content: center;
+    z-index: 1000;
+}
+footer{
+    color: white;
+    text-align: center;
+    font-family: 'Otomanopee One', sans-serif;
+    background-color: black;
+    border: solid 2px #fff;
+    width: 97.39%;
+    padding: 15.5px;
+    z-index: 2000;
+    
+}
+.caja{
+    z-index: 1;
+}
+.texts{
+   
+    font-family: 'Otomanopee One', sans-serif;
+    color: white;
+    text-align: left;
+    background-color: black;
+    border: solid 2px #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+   
+}
+
+.texts .especial{
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.nosequeponer{
+    z-index: 1;
+}
+.texts p.respuesta{
+text-align: right;
+}
+.caja div{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: solid rgba(255, 255, 255, 0.8);
+}
+.caja #fondoc{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: solid rgba(255, 255, 255, 0.8);
+}
+
+.caja div:nth-child(1){
+    top: 12%;
+    left: 42%;
+    animation: animame 10s linear infinite;
+}
+.caja div:nth-child(2){
+    top: 70%;
+    left: 50%;
+    animation: animame 7s linear infinite;
+}
+.caja div:nth-child(3){
+    top: 17%;
+    left: 6%;
+    animation: animame 9s linear infinite;
+}
+.caja div:nth-child(4){
+    top: 20%;
+    left: 60%;
+    animation: animame 10s linear infinite;
+}
+.caja div:nth-child(5){
+    top: 67%;
+    left: 10%;
+    animation: animame 6s linear infinite;
+}
+.caja div:nth-child(6){
+    top: 80%;
+    left: 70%;
+    animation: animame 12s linear infinite;
+}
+.caja div:nth-child(7){
+    top: 60%;
+    left: 80%;
+    animation: animame 15s linear infinite;
+}
+.caja div:nth-child(8){
+    top: 32%;
+    left: 25%;
+    animation: animame 16s linear infinite;
+}
+.caja div:nth-child(9){
+    top: 90%;
+    left: 25%;
+    animation: animame 9s linear infinite;
+}
+.caja div:nth-child(10){
+    top: 20%;
+    left: 80%;
+    animation: animame 5s linear infinite;
+}
+
+
+@keyframes animame{
+    0%{
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.3) translateY(-90px) rotate(360deg);
+        opacity: 0;
+    }
+}
+/*loader*/
+
+
+.cuento{
+ 
+    background: #000;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.load{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
+    animation: animate 2s linear infinite;
+}
+.load:before{
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: #000;
+    border-radius: 50%;
+    z-index: 1000;
+}
+.load:after{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #000;
+    border-radius: 50%;
+    z-index: 1000;
+    background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
+    z-index: 1;
+    filter: blur(30px);
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+
+.oleado{
+    position: relative;
+
+    -webkit-box-reflect: below -45px linear-gradient(transparent, rgba(0,0,0,0.2));
+}
+.oleado span{
+    position: relative;
+    display: inline-block;
+    color: #fff;
+   
+    font-size: 1em;
+    animation: animation 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+    
+}
+
+.oleado{
+    margin-top: 30px;
+    padding: 20px;
+}
+@keyframes animation{
+    0%{
+        transform: translateY(0px);
+    }
+    20%{
+        transform: translateY(-20px);
+    }
+    40%, 100%{
+        transform: translateY(0px);
+    }
+}
+.dissappear{
+    animation: vanish 1s forwards;
+}
+@keyframes vanish {
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(to bottom, #0011ff 0%, #d32ac5 51%);
+    background-attachment: fixed;
+    font-family: 'Otomanopee One', sans-serif;
+    font-size:13px;
+    margin:0px;
+    padding:0px;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+  
+    width:100%;
+}
+section p{
+    
+    width: 100%;
+  
+}
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+#deviceready.ready .event.listening { display: none; }
+#deviceready.ready .event.received { display: block; }
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+@media only screen and (max-width: 400px) {
+   .texts{
+       width: 90%;
+   }
+   .caja div:nth-child(1){
+    top: 12%;
+    left: 42%;
+    animation: animame 10s linear infinite;
+}
+.caja div:nth-child(2){
+    top: 70%;
+    left: 50%;
+    animation: animame 7s linear infinite;
+}
+.caja div:nth-child(3){
+    top: 17%;
+    left: 6%;
+    animation: animame 9s linear infinite;
+}
+.caja div:nth-child(4){
+    top: 20%;
+    left: 60%;
+    animation: animame 10s linear infinite;
+}
+.caja div:nth-child(5){
+    top: 67%;
+    left: 10%;
+    animation: animame 6s linear infinite;
+}
+.caja div:nth-child(6){
+    top: 80%;
+    left: 70%;
+    animation: animame 12s linear infinite;
+}
+.caja div:nth-child(7){
+    top: 60%;
+    left: 80%;
+    animation: animame 15s linear infinite;
+}
+.caja div:nth-child(8){
+    top: 32%;
+    left: 25%;
+    animation: animame 16s linear infinite;
+}
+.caja div:nth-child(9){
+    top: 90%;
+    left: 25%;
+    animation: animame 9s linear infinite;
+}
+.caja div:nth-child(10){
+    top: 20%;
+    left: 80%;
+    animation: animame 5s linear infinite;
+}
+.caja div{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: solid rgba(255, 255, 255, 0.8);
+}
+.divdefooter{
+    justify-content: center;
+}
+footer{
+    color: white;
+    text-align: center;
+    font-family: 'Otomanopee One', sans-serif;
+    background-color: black;
+    border: solid 2px #fff;
+    width: 90%;
+    padding: 15.5px;
+}
+  }
